@@ -1,0 +1,25 @@
+{
+  "name": "Friends Mode",
+  "version": "1.0",
+  "icons": {
+    "16": "images/icon/icon_16.png",
+    "48": "images/icon/icon_48.png",
+    "128": "images/icon/icon_128.png"
+  },
+  "manifest_version": 2,
+  "description": "githubとtwitterがけものフレンズ風の色合いになる。",
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Friends Mode"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*", "https://twitter.com/*"],
+      "js": ["js/jquery-2.1.4.min.js", "js/main.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
